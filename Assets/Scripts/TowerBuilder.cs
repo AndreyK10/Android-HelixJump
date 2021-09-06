@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerBuilder : MonoBehaviour
 {
     [SerializeField] private int levelCount;
+    public static int numberOfPlatforms { get; private set; }
     [SerializeField] private GameObject stick;
 
     [SerializeField] private SpawnPlatform spawnPlatform;
@@ -13,7 +13,7 @@ public class TowerBuilder : MonoBehaviour
 
     [SerializeField] private List<Platform> platforms = new List<Platform>();
 
-    private float startAndFinishAddSpace = 0.5f;
+    private float startAndFinishAddSpace = 0.6f;
 
     [SerializeField] private float additionalScale = 0.5f;
 
@@ -22,7 +22,9 @@ public class TowerBuilder : MonoBehaviour
 
     private void Awake()
     {
+        //levelCount = Random.Range(15, 30);        
         Build();
+        numberOfPlatforms = platforms.Count;
     }
 
     private void Build()
