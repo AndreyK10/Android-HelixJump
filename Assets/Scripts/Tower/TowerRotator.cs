@@ -13,15 +13,16 @@ public class TowerRotator : MonoBehaviour
     }
 
     private void Update()
-    {       
-        if (Input.touchCount > 0)
+    {
+        if (Input.touchCount == 1)
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved)
+            Touch touch0 = Input.GetTouch(0);
+
+            if (touch0.phase == TouchPhase.Moved)
             {
-                float torque = touch.deltaPosition.x * Time.deltaTime * rotateSpeed;
-                rb.AddTorque(Vector3.up * torque * -1f);
+                transform.Rotate(0f, touch0.deltaPosition.x * Time.deltaTime * rotateSpeed * -1f, 0f);
             }
+
         }
     }
 
