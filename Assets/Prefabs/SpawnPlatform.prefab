@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f505380647a1446ba2a7779f246189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 100
-  bounceRadius: 100
+  bounceForce: 150
+  bounceRadius: 200
   ball: {fileID: 6526326620757960793, guid: b20b6b80770b0de4a80c6d5859cb544c, type: 3}
   spawnPoint: {fileID: 4326819240495985248}
 --- !u!1001 &1365899452995024185

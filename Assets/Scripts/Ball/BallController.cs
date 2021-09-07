@@ -39,12 +39,13 @@ public class BallController : MonoBehaviour
             GameplayController.instance.FinishGame(ball);
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlatformSegment platformSegment))
         {
             other.GetComponentInParent<Platform>().Break();
             GameplayController.instance.DecreaseCounter();
+            other.gameObject.SetActive(false);
         }
         
     }
